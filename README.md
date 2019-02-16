@@ -1,2 +1,2 @@
 # syclass
-An rewrite of oc-class over Symfony Framework
+An rewrite of os-class (https://github.com/osclass/Osclass) over Symfony Framework
