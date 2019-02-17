@@ -1,0 +1,42 @@
+{
+    "name": "syclass/core",
+    "type": "library",
+    "description": "Classified based on Symfony PHP framework",
+    "keywords": ["classified"],
+    "homepage": "https://github.com/estandarte/syclass",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leandro Chaves",
+            "email": "leandrorchaves@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "sensio/framework-extra-bundle": "^5.1",
+        "symfony/asset": "*",
+        "symfony/console": "*",
+        "symfony/dotenv": "*",
+        "symfony/expression-language": "*",
+        "symfony/flex": "^1.1",
+        "symfony/form": "*",
+        "symfony/framework-bundle": "*",
+        "symfony/monolog-bundle": "^3.1",
+        "symfony/orm-pack": "*",
+        "symfony/process": "*",
+        "symfony/security-bundle": "*",
+        "symfony/serializer-pack": "*",
+        "symfony/swiftmailer-bundle": "^3.1",
+        "symfony/translation": "*",
+        "symfony/twig-bundle": "*",
+        "symfony/validator": "*",
+        "symfony/web-link": "*",
+        "symfony/yaml": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Syclass\\Core\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
