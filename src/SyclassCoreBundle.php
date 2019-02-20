@@ -1,6 +1,6 @@
 <?php
 
-namespace Syclass\CoreBundle;
+namespace Syclass\Core;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Syclass\\CoreBundle\\": "src/"
+            "Syclass\\Core\\": "src/"
         }
     },
     "minimum-stability": "dev"
