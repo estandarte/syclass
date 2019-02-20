@@ -1,0 +1,78 @@
+Syclass\Entity\Pages:
+    type: entity
+    table: pages
+    id:
+        pkIId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sInternalName:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_internal_name
+        bIndelible:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+            column: b_indelible
+        bLink:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_link
+        dtPubDate:
+            type: datetime
+            nullable: false
+            column: dt_pub_date
+        dtModDate:
+            type: datetime
+            nullable: true
+            options:
+                default: 'NULL'
+            column: dt_mod_date
+        iOrder:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            column: i_order
+        sMeta:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_meta
+    manyToMany:
+        fkCLocaleCode:
+            targetEntity: Locale
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: fkIPages
+            joinTable:
+                name: pages_description
+                joinColumns:
+                    -
+                        name: fk_i_pages_id
+                        referencedColumnName: pk_i_id
+                inverseJoinColumns:
+                    -
+                        name: fk_c_locale_code
+                        referencedColumnName: pk_c_code
+            orderBy: null
+    lifecycleCallbacks: {  }

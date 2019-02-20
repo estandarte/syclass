@@ -1,0 +1,48 @@
+Syclass\Entity\Preference:
+    type: entity
+    table: preference
+    uniqueConstraints:
+        s_section:
+            columns:
+                - s_section
+                - s_name
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        section:
+            type: string
+            nullable: false
+            length: 128
+            options:
+                fixed: false
+            column: s_section
+        name:
+            type: string
+            nullable: false
+            length: 128
+            options:
+                fixed: false
+            column: s_name
+        value:
+            type: text
+            nullable: false
+            length: 0
+            options:
+                fixed: false
+            column: s_value
+        type:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: e_type
+    lifecycleCallbacks: {  }

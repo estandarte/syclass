@@ -1,0 +1,60 @@
+Syclass\Entity\ItemDescription:
+    type: entity
+    table: item_description
+    indexes:
+        s_description:
+            columns:
+                - s_description
+                - s_title
+    id:
+        itemId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: fk_i_item_id
+        localeCode:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: true
+            id: true
+            column: fk_c_locale_code
+    fields:
+        title:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_title
+        description:
+            type: text
+            nullable: false
+            length: 16777215
+            options:
+                fixed: false
+            column: s_description
+    manyToOne:
+        item:
+            targetEntity: Item
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: description
+            joinColumns:
+                fk_i_item_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        locale:
+            targetEntity: Locale
+            cascade: ['persist']
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_c_locale_code:
+                    referencedColumnName: pk_c_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

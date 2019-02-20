@@ -1,0 +1,40 @@
+Syclass\Entity\CityArea:
+    type: entity
+    table: city_area
+    indexes:
+        fk_i_city_id:
+            columns:
+                - fk_i_city_id
+        idx_s_name:
+            columns:
+                - s_name
+    id:
+        pkIId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sName:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_name
+    manyToOne:
+        fkICity:
+            targetEntity: City
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_city_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

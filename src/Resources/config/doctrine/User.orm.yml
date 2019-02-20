@@ -1,0 +1,299 @@
+Syclass\Entity\User:
+    type: entity
+    table: user
+    indexes:
+        fk_i_region_id:
+            columns:
+                - fk_i_region_id
+        fk_c_country_code:
+            columns:
+                - fk_c_country_code
+        fk_i_city_area_id:
+            columns:
+                - fk_i_city_area_id
+        idx_s_username:
+            columns:
+                - s_username
+        fk_i_city_id:
+            columns:
+                - fk_i_city_id
+        idx_s_name:
+            columns:
+                - s_name
+    uniqueConstraints:
+        s_email:
+            columns:
+                - s_email
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        regDate:
+            type: datetime
+            nullable: false
+            column: dt_reg_date
+        modDate:
+            type: datetime
+            nullable: true
+            options:
+                default: 'NULL'
+            column: dt_mod_date
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_name
+        username:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_username
+        sPassword:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: true
+            column: s_password
+        secret:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_secret
+        email:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_email
+        website:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_website
+        phoneLand:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_phone_land
+        phoneMobile:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_phone_mobile
+        enabled:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_enabled
+        active:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+            column: b_active
+        passCode:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_pass_code
+        passDate:
+            type: datetime
+            nullable: true
+            options:
+                default: 'NULL'
+            column: s_pass_date
+        passIp:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_pass_ip
+        sCountry:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_country
+        address:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_address
+        zip:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_zip
+        sRegion:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_region
+        sCity:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_city
+        sCityArea:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_city_area
+        coordLat:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 6
+            options:
+                default: 'NULL'
+            column: d_coord_lat
+        coordLong:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 6
+            options:
+                default: 'NULL'
+            column: d_coord_long
+        company:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+            column: b_company
+        items:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+                default: '0'
+            column: i_items
+        comments:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+                default: '0'
+            column: i_comments
+        accessDate:
+            type: datetime
+            nullable: false
+            options:
+                default: '''0000-00-00 00:00:00'''
+            column: dt_access_date
+        accessIp:
+            type: string
+            nullable: false
+            length: 15
+            options:
+                fixed: false
+                default: ''''''
+            column: s_access_ip
+    manyToOne:
+        country:
+            targetEntity: Country
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_c_country_code:
+                    referencedColumnName: pk_c_code
+            orphanRemoval: false
+        region:
+            targetEntity: Region
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_region_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        city:
+            targetEntity: City
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_city_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        cityArea:
+            targetEntity: CityArea
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_city_area_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    manyToMany:
+        locale:
+            targetEntity: Locale
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: fkIUser
+            joinTable:
+                name: user_description
+                joinColumns:
+                    -
+                        name: fk_i_user_id
+                        referencedColumnName: pk_i_id
+                inverseJoinColumns:
+                    -
+                        name: fk_c_locale_code
+                        referencedColumnName: pk_c_code
+            orderBy: null
+    lifecycleCallbacks: {  }

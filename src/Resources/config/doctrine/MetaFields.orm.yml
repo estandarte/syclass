@@ -1,0 +1,66 @@
+Syclass\Entity\MetaFields:
+    type: entity
+    table: meta_fields
+    id:
+        pkIId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sName:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_name
+        sSlug:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_slug
+        eType:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: e_type
+        sOptions:
+            type: string
+            nullable: true
+            length: 2048
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_options
+        bRequired:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+            column: b_required
+        bSearchable:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+            column: b_searchable
+    manyToMany:
+        fkICategory:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: fkIField
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

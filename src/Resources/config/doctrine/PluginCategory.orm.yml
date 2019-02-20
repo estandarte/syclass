@@ -1,0 +1,36 @@
+Syclass\Entity\PluginCategory:
+    type: entity
+    table: plugin_category
+    indexes:
+        fk_i_category_id:
+            columns:
+                - fk_i_category_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        sPluginName:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+            column: s_plugin_name
+    manyToOne:
+        fkICategory:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_category_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

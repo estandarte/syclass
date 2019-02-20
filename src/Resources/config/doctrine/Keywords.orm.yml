@@ -1,0 +1,79 @@
+Syclass\Entity\Keywords:
+    type: entity
+    table: keywords
+    indexes:
+        fk_c_locale_code:
+            columns:
+                - fk_c_locale_code
+        fk_i_city_id:
+            columns:
+                - fk_i_city_id
+        fk_i_category_id:
+            columns:
+                - fk_i_category_id
+    id:
+        sMd5:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            id: true
+            column: s_md5
+        fkCLocaleCode:
+            associationKey: true
+    fields:
+        sOriginalText:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_original_text
+        sAnchorText:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_anchor_text
+        sNormalizedText:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_normalized_text
+    manyToOne:
+        fkICategory:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_category_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        fkICity:
+            targetEntity: City
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_city_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    oneToOne:
+        fkCLocaleCode:
+            targetEntity: Locale
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_c_locale_code:
+                    referencedColumnName: pk_c_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

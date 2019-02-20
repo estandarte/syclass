@@ -1,0 +1,102 @@
+Syclass\Entity\Category:
+    type: entity
+    table: category
+    indexes:
+        fk_i_parent_id:
+            columns:
+                - fk_i_parent_id
+        i_position:
+            columns:
+                - i_position
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        expirationDays:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_expiration_days
+        position:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_position
+        enabled:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_enabled
+        priceEnabled:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_price_enabled
+        icon:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_icon
+    manyToOne:
+        parent:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_parent_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    manyToMany:
+        locale:
+            targetEntity: Locale
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: category
+            joinTable:
+                name: category_description
+                joinColumns:
+                    -
+                        name: fk_i_category_id
+                        referencedColumnName: pk_i_id
+                inverseJoinColumns:
+                    -
+                        name: fk_c_locale_code
+                        referencedColumnName: pk_c_code
+            orderBy: null
+        field:
+            targetEntity: MetaFields
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: category
+            joinTable:
+                name: meta_categories
+                joinColumns:
+                    -
+                        name: fk_i_category_id
+                        referencedColumnName: pk_i_id
+                inverseJoinColumns:
+                    -
+                        name: fk_i_field_id
+                        referencedColumnName: pk_i_id
+            orderBy: null
+    lifecycleCallbacks: {  }
