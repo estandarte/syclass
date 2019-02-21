@@ -1,4 +1,4 @@
-Syclass\Entity\BanRule:
+Syclass\Core\Entity\BanRule:
     type: entity
     table: ban_rule
     id:

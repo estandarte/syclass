@@ -1,4 +1,4 @@
-Syclass\Entity\Locale:
+Syclass\Core\Entity\Locale:
     type: entity
     table: locale
     uniqueConstraints:

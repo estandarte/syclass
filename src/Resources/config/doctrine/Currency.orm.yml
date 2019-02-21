@@ -1,4 +1,4 @@
-Syclass\Entity\Currency:
+Syclass\Core\Entity\Currency:
     type: entity
     table: currency
     uniqueConstraints:

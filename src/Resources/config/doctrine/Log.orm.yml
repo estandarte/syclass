@@ -1,4 +1,4 @@
-Syclass\Entity\Log:
+Syclass\Core\Entity\Log:
     type: entity
     table: log
     id:

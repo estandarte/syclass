@@ -1,4 +1,4 @@
-Syclass\Entity\ItemResource:
+Syclass\Core\Entity\ItemResource:
     type: entity
     table: item_resource
     indexes:

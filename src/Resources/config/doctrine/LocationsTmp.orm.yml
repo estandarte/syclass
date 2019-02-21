@@ -1,4 +1,4 @@
-Syclass\Entity\LocationsTmp:
+Syclass\Core\Entity\LocationsTmp:
     type: entity
     table: locations_tmp
     id:

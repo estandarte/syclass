@@ -1,4 +1,4 @@
-Syclass\Entity\PluginCategory:
+Syclass\Core\Entity\PluginCategory:
     type: entity
     table: plugin_category
     indexes:

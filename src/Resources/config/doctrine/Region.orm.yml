@@ -1,4 +1,4 @@
-Syclass\Entity\Region:
+Syclass\Core\Entity\Region:
     type: entity
     table: region
     indexes:

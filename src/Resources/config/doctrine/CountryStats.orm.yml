@@ -1,4 +1,4 @@
-Syclass\Entity\CountryStats:
+Syclass\Core\Entity\CountryStats:
     type: entity
     table: country_stats
     indexes:

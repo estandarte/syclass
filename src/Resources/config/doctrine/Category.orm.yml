@@ -1,4 +1,4 @@
-Syclass\Entity\Category:
+Syclass\Core\Entity\Category:
     type: entity
     table: category
     indexes:

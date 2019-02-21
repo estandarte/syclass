@@ -1,5 +1,5 @@
 <?php
-namespace Syclass\CoreDependencyInjection;
+namespace Syclass\Core\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;

@@ -1,4 +1,4 @@
-Syclass\Entity\Admin:
+Syclass\Core\Entity\Admin:
     type: entity
     table: admin
     uniqueConstraints:

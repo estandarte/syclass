@@ -1,4 +1,4 @@
-Syclass\Entity\CityStats:
+Syclass\Core\Entity\CityStats:
     type: entity
     table: city_stats
     indexes:

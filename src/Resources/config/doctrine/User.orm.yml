@@ -1,4 +1,4 @@
-Syclass\Entity\User:
+Syclass\Core\Entity\User:
     type: entity
     table: user
     indexes:

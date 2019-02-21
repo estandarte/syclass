@@ -1,0 +1,18 @@
+doctrine:
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            SyclassCore:
+                is_bundle: false
+                type: yml
+                dir: "@=service('kernel').locateResource('@SyclassCoreBundle/Resources/config/doctrine')"
+                prefix: 'Syclass\Core\Entity'
+                alias: SyclassCore
+services:
+    # adding the required tag to all repository services
+    App\Repository\:
+        resource: '../src/Repository'
+        autowire: true
+        tags: ['doctrine.repository_service']

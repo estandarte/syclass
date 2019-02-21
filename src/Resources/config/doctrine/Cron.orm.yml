@@ -1,4 +1,4 @@
-Syclass\Entity\Cron:
+Syclass\Core\Entity\Cron:
     type: entity
     table: cron
     id:

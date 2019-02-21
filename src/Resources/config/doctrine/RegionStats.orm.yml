@@ -1,4 +1,4 @@
-Syclass\Entity\RegionStats:
+Syclass\Core\Entity\RegionStats:
     type: entity
     table: region_stats
     indexes:

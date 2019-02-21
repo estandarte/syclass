@@ -1,4 +1,4 @@
-Syclass\Entity\Keywords:
+Syclass\Core\Entity\Keywords:
     type: entity
     table: keywords
     indexes:

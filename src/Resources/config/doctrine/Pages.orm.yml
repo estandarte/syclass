@@ -1,4 +1,4 @@
-Syclass\Entity\Pages:
+Syclass\Core\Entity\Pages:
     type: entity
     table: pages
     id:

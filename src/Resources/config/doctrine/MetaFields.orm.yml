@@ -1,4 +1,4 @@
-Syclass\Entity\MetaFields:
+Syclass\Core\Entity\MetaFields:
     type: entity
     table: meta_fields
     id:

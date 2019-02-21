@@ -1,4 +1,4 @@
-Syclass\Entity\UserEmailTmp:
+Syclass\Core\Entity\UserEmailTmp:
     type: entity
     table: user_email_tmp
     id:

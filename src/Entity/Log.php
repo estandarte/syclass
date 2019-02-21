@@ -1,6 +1,6 @@
 <?php
 
-namespace Syclass\Entity;
+namespace Syclass\Core\Entity;
 
 class Log
 {

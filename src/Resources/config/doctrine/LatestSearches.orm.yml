@@ -1,4 +1,4 @@
-Syclass\Entity\LatestSearches:
+Syclass\Core\Entity\LatestSearches:
     type: entity
     table: latest_searches
     id:

@@ -1,4 +1,4 @@
-Syclass\Entity\ItemMeta:
+Syclass\Core\Entity\ItemMeta:
     type: entity
     table: item_meta
     indexes:

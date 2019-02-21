@@ -1,7 +1,7 @@
-Syclass\Entity\Item:
+Syclass\Core\Entity\Item:
     type: entity
     table: item
-    repositoryClass: Syclass\Repository\ItemRepository
+    repositoryClass: Syclass\Core\Repository\ItemRepository
     indexes:
         fk_c_currency_code:
             columns:

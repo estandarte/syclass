@@ -1,4 +1,4 @@
-Syclass\Entity\CategoryStats:
+Syclass\Core\Entity\CategoryStats:
     type: entity
     table: category_stats
     id:

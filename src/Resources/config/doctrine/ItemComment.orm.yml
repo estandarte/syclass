@@ -1,4 +1,4 @@
-Syclass\Entity\ItemComment:
+Syclass\Core\Entity\ItemComment:
     type: entity
     table: item_comment
     indexes:

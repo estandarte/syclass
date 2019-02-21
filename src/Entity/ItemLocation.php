@@ -1,6 +1,6 @@
 <?php
 
-namespace Syclass\Entity;
+namespace Syclass\Core\Entity;
 
 class ItemLocation
 {
@@ -47,6 +47,24 @@ class ItemLocation
     private $city;
 
     private $cityArea;
+    private $itemId;
+    private $localeCode;
+    public function getItemId(): ?int
+    {
+        return $this->itemId;
+    }
+    public function setItemId($itemId)
+    {
+        $this->itemId = $itemId;
+    }
+    public function getLocaleCode(): ?int
+    {
+        return $this->LocaleCode;
+    }
+    public function setLocaleCode($localeCode)
+    {
+        $this->localeCode = $localeCode;
+    }
 
     public function getSCountry(): ?string
     {

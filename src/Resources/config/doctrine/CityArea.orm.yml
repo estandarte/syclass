@@ -1,4 +1,4 @@
-Syclass\Entity\CityArea:
+Syclass\Core\Entity\CityArea:
     type: entity
     table: city_area
     indexes:

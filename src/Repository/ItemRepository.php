@@ -1,6 +1,6 @@
 <?php
 
-namespace Syclass\Repository;
+namespace Syclass\Core\Repository;
 
 use Syclass\Entity\Item;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;

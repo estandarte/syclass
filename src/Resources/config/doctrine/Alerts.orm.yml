@@ -1,4 +1,4 @@
-Syclass\Entity\Alerts:
+Syclass\Core\Entity\Alerts:
     type: entity
     table: alerts
     id:

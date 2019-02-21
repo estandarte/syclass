@@ -1,4 +1,4 @@
-Syclass\Entity\ItemDescription:
+Syclass\Core\Entity\ItemDescription:
     type: entity
     table: item_description
     indexes:

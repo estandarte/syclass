@@ -1,4 +1,4 @@
-Syclass\Entity\Preference:
+Syclass\Core\Entity\Preference:
     type: entity
     table: preference
     uniqueConstraints:

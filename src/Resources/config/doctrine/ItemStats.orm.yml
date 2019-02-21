@@ -1,4 +1,4 @@
-Syclass\Entity\ItemStats:
+Syclass\Core\Entity\ItemStats:
     type: entity
     table: item_stats
     indexes:

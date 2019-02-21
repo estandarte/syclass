@@ -1,4 +1,4 @@
-Syclass\Entity\ItemLocation:
+Syclass\Core\Entity\ItemLocation:
     type: entity
     table: item_location
     indexes:
@@ -15,8 +15,22 @@ Syclass\Entity\ItemLocation:
             columns:
                 - fk_i_region_id
     id:
-        id:
-            associationKey: true
+        itemId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: fk_i_item_id
+        localeCode:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: true
+            id: true
+            column: fk_c_country_code
+
     fields:
         sCountry:
             type: string
