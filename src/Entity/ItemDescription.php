@@ -33,7 +33,7 @@ class ItemDescription
 
     public function setTitle(string $title): self
     {
-        $this->title = $title;
+        $this->title = substr($title, 0, 100);
 
         return $this;
     }

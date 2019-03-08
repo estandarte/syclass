@@ -9,25 +9,26 @@ class Category
 {
     private $id;
 
-    private $expirationDays;
+    private $expirationDays = 0;
 
-    private $position;
+    private $position = 0;
 
-    private $enabled;
+    private $enabled = 1;
 
-    private $priceEnabled;
+    private $priceEnabled = 1;
 
     private $icon;
 
     private $parent;
-
+    /**
+     * @var Locale
+     */
     private $locale;
-
     private $field;
 
-    public function __construct()
+    public function __construct(Category $parent)
     {
-        $this->locale = new ArrayCollection();
+        $this->parent = $parent;
         $this->field = new ArrayCollection();
     }
 
@@ -159,4 +160,72 @@ class Category
 
         return $this;
     }
+
+    /**
+     * Set the value of Id
+     *
+     * @param mixed id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Description
+     *
+     * @return CategoryDescription
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set the value of Description
+     *
+     * @param CategoryDescription description
+     *
+     * @return self
+     */
+    public function setDescription(CategoryDescription $description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Field
+     *
+     * @param mixed field
+     *
+     * @return self
+     */
+    public function setField($field)
+    {
+        $this->field = $field;
+
+        return $this;
+    }
+
+
+    /**
+     * Set the value of Locale
+     *
+     * @param Locale locale
+     *
+     * @return self
+     */
+    public function setLocale(Locale $locale)
+    {
+        $this->locale = $locale;
+
+        return $this;
+    }
+
 }
