@@ -15,6 +15,6 @@ Syclass\Core\Entity\AlertsSent:
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_alerts_sent
     lifecycleCallbacks: {  }

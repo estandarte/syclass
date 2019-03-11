@@ -30,12 +30,12 @@ Syclass\Core\Entity\Currency:
             length: 80
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_description
         enabled:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_enabled
     lifecycleCallbacks: {  }

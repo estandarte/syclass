@@ -38,7 +38,7 @@ Syclass\Core\Entity\ItemLocation:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_country
         address:
             type: string
@@ -46,7 +46,7 @@ Syclass\Core\Entity\ItemLocation:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_address
         zip:
             type: string
@@ -54,7 +54,7 @@ Syclass\Core\Entity\ItemLocation:
             length: 15
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_zip
         sRegion:
             type: string
@@ -62,7 +62,7 @@ Syclass\Core\Entity\ItemLocation:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_region
         sCity:
             type: string
@@ -70,7 +70,7 @@ Syclass\Core\Entity\ItemLocation:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_city
         sCityArea:
             type: string
@@ -78,7 +78,7 @@ Syclass\Core\Entity\ItemLocation:
             length: 200
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_city_area
         coordLat:
             type: decimal
@@ -86,7 +86,7 @@ Syclass\Core\Entity\ItemLocation:
             precision: 10
             scale: 6
             options:
-                default: 'NULL'
+                default: NULL
             column: d_coord_lat
         coordLong:
             type: decimal
@@ -94,7 +94,7 @@ Syclass\Core\Entity\ItemLocation:
             precision: 10
             scale: 6
             options:
-                default: 'NULL'
+                default: NULL
             column: d_coord_long
     oneToOne:
         item:

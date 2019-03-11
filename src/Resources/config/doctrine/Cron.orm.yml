@@ -17,7 +17,7 @@ Syclass\Core\Entity\Cron:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: e_type
         dLastExec:
             type: datetime

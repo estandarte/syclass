@@ -46,7 +46,7 @@ Syclass\Core\Entity\Admin:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_email
         sSecret:
             type: string
@@ -54,12 +54,12 @@ Syclass\Core\Entity\Admin:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_secret
         bModerator:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_moderator
     lifecycleCallbacks: {  }

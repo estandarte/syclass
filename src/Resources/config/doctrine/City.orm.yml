@@ -38,13 +38,13 @@ Syclass\Core\Entity\City:
             length: 60
             options:
                 fixed: false
-                default: ''''''
+                default: ''
             column: s_slug
         bActive:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_active
     manyToOne:
         fkIRegion:

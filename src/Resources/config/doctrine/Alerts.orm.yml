@@ -18,14 +18,14 @@ Syclass\Core\Entity\Alerts:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_email
         fkIUserId:
             type: integer
             nullable: true
             options:
                 unsigned: true
-                default: 'NULL'
+                default: NULL
             column: fk_i_user_id
         sSearch:
             type: text
@@ -33,7 +33,7 @@ Syclass\Core\Entity\Alerts:
             length: 0
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_search
         sSecret:
             type: string
@@ -41,13 +41,13 @@ Syclass\Core\Entity\Alerts:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_secret
         bActive:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_active
         eType:
             type: string
@@ -55,18 +55,18 @@ Syclass\Core\Entity\Alerts:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: e_type
         dtDate:
             type: datetime
             nullable: true
             options:
-                default: 'NULL'
+                default: NULL
             column: dt_date
         dtUnsubDate:
             type: datetime
             nullable: true
             options:
-                default: 'NULL'
+                default: NULL
             column: dt_unsub_date
     lifecycleCallbacks: {  }

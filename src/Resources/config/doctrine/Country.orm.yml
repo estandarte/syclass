@@ -33,6 +33,6 @@ Syclass\Core\Entity\Country:
             length: 80
             options:
                 fixed: false
-                default: ''''''
+                default: ''
             column: s_slug
     lifecycleCallbacks: {  }

@@ -23,49 +23,49 @@ Syclass\Core\Entity\ItemStats:
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_views
         iNumSpam:
             type: integer
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_spam
         iNumRepeated:
             type: integer
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_repeated
         iNumBadClassified:
             type: integer
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_bad_classified
         iNumOffensive:
             type: integer
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_offensive
         iNumExpired:
             type: integer
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_expired
         iNumPremiumViews:
             type: integer
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_premium_views
     oneToOne:
         fkIItem:

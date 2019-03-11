@@ -18,7 +18,7 @@ Syclass\Core\Entity\BanRule:
             length: 250
             options:
                 fixed: false
-                default: ''''''
+                default: ''
             column: s_name
         sIp:
             type: string
@@ -26,7 +26,7 @@ Syclass\Core\Entity\BanRule:
             length: 50
             options:
                 fixed: false
-                default: ''''''
+                default: ''
             column: s_ip
         sEmail:
             type: string
@@ -34,6 +34,6 @@ Syclass\Core\Entity\BanRule:
             length: 250
             options:
                 fixed: false
-                default: ''''''
+                default: ''
             column: s_email
     lifecycleCallbacks: {  }

@@ -32,7 +32,7 @@ Syclass\Core\Entity\Widget:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: e_type
         sContent:
             type: text

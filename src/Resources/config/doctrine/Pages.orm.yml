@@ -18,19 +18,19 @@ Syclass\Core\Entity\Pages:
             length: 50
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_internal_name
         bIndelible:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_indelible
         bLink:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_link
         dtPubDate:
             type: datetime
@@ -40,14 +40,14 @@ Syclass\Core\Entity\Pages:
             type: datetime
             nullable: true
             options:
-                default: 'NULL'
+                default: NULL
             column: dt_mod_date
         iOrder:
             type: integer
             nullable: false
             options:
                 unsigned: false
-                default: '0'
+                default: 0
             column: i_order
         sMeta:
             type: text
@@ -55,7 +55,7 @@ Syclass\Core\Entity\Pages:
             length: 65535
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_meta
     manyToMany:
         fkCLocaleCode:

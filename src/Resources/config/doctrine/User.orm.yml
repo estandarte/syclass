@@ -43,7 +43,7 @@ Syclass\Core\Entity\User:
             type: datetime
             nullable: true
             options:
-                default: 'NULL'
+                default: NULL
             column: dt_mod_date
         name:
             type: string
@@ -72,7 +72,7 @@ Syclass\Core\Entity\User:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_secret
         email:
             type: string
@@ -87,7 +87,7 @@ Syclass\Core\Entity\User:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_website
         phoneLand:
             type: string
@@ -95,7 +95,7 @@ Syclass\Core\Entity\User:
             length: 45
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_phone_land
         phoneMobile:
             type: string
@@ -103,19 +103,19 @@ Syclass\Core\Entity\User:
             length: 45
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_phone_mobile
         enabled:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_enabled
         active:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_active
         passCode:
             type: string
@@ -123,13 +123,13 @@ Syclass\Core\Entity\User:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_pass_code
         passDate:
             type: datetime
             nullable: true
             options:
-                default: 'NULL'
+                default: NULL
             column: s_pass_date
         passIp:
             type: string
@@ -137,7 +137,7 @@ Syclass\Core\Entity\User:
             length: 15
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_pass_ip
         sCountry:
             type: string
@@ -145,7 +145,7 @@ Syclass\Core\Entity\User:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_country
         address:
             type: string
@@ -153,7 +153,7 @@ Syclass\Core\Entity\User:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_address
         zip:
             type: string
@@ -161,7 +161,7 @@ Syclass\Core\Entity\User:
             length: 15
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_zip
         sRegion:
             type: string
@@ -169,7 +169,7 @@ Syclass\Core\Entity\User:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_region
         sCity:
             type: string
@@ -177,7 +177,7 @@ Syclass\Core\Entity\User:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_city
         sCityArea:
             type: string
@@ -185,7 +185,7 @@ Syclass\Core\Entity\User:
             length: 200
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_city_area
         coordLat:
             type: decimal
@@ -193,7 +193,7 @@ Syclass\Core\Entity\User:
             precision: 10
             scale: 6
             options:
-                default: 'NULL'
+                default: NULL
             column: d_coord_lat
         coordLong:
             type: decimal
@@ -201,33 +201,33 @@ Syclass\Core\Entity\User:
             precision: 10
             scale: 6
             options:
-                default: 'NULL'
+                default: NULL
             column: d_coord_long
         company:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_company
         items:
             type: integer
             nullable: true
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_items
         comments:
             type: integer
             nullable: true
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_comments
         accessDate:
             type: datetime
             nullable: false
             options:
-                default: '''0000-00-00 00:00:00'''
+                default: '0000-00-00 00:00:00'
             column: dt_access_date
         accessIp:
             type: string
@@ -235,7 +235,7 @@ Syclass\Core\Entity\User:
             length: 15
             options:
                 fixed: false
-                default: ''''''
+                default: ''
             column: s_access_ip
     manyToOne:
         country:

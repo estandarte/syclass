@@ -43,7 +43,7 @@ Syclass\Core\Entity\Item:
             type: datetime
             nullable: true
             options:
-                default: 'NULL'
+                default: NULL
             column: dt_mod_date
         fPrice:
             type: float
@@ -51,14 +51,14 @@ Syclass\Core\Entity\Item:
             precision: 10
             scale: 0
             options:
-                default: 'NULL'
+                default: NULL
             column: f_price
         iPrice:
             type: bigint
             nullable: true
             options:
                 unsigned: false
-                default: 'NULL'
+                default: NULL
             column: i_price
         contactName:
             type: string
@@ -66,7 +66,7 @@ Syclass\Core\Entity\Item:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_contact_name
         contactEmail:
             type: string
@@ -81,31 +81,31 @@ Syclass\Core\Entity\Item:
             length: 64
             options:
                 fixed: false
-                default: ''''''
+                default: ''
             column: s_ip
         premium:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_premium
         enabled:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_enabled
         active:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_active
         spam:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_spam
         secret:
             type: string
@@ -113,19 +113,19 @@ Syclass\Core\Entity\Item:
             length: 40
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_secret
         showEmail:
             type: boolean
             nullable: true
             options:
-                default: 'NULL'
+                default: NULL
             column: b_show_email
         expiration:
             type: datetime
             nullable: false
             options:
-                default: '''9999-12-31 23:59:59'''
+                default: '9999-12-31 23:59:59'
             column: dt_expiration
     oneToMany:
         description:

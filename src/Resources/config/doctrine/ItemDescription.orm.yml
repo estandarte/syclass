@@ -2,10 +2,10 @@ Syclass\Core\Entity\ItemDescription:
     type: entity
     table: item_description
     indexes:
-        s_description:
-            columns:
-                - s_description
-                - s_title
+        # s_description:
+        #     columns:
+        #         - s_description
+        #         - s_title
     id:
         itemId:
             type: integer

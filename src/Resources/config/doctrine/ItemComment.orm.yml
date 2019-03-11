@@ -55,19 +55,19 @@ Syclass\Core\Entity\ItemComment:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_enabled
         bActive:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_active
         bSpam:
             type: boolean
             nullable: false
             options:
-                default: '0'
+                default: 0
             column: b_spam
     manyToOne:
         fkIItem:

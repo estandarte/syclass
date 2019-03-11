@@ -35,7 +35,7 @@ Syclass\Core\Entity\CategoryDescription:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_name
         description:
             type: string
@@ -43,7 +43,7 @@ Syclass\Core\Entity\CategoryDescription:
             length: 100
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_description
         slug:
             type: string

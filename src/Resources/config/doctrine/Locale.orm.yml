@@ -72,7 +72,7 @@ Syclass\Core\Entity\Locale:
             length: 2
             options:
                 fixed: false
-                default: '''.'''
+                default: '.'
             column: s_dec_point
         thousandsSep:
             type: string
@@ -80,7 +80,7 @@ Syclass\Core\Entity\Locale:
             length: 2
             options:
                 fixed: false
-                default: ''''''
+                # default: ''
             column: s_thousands_sep
         numDec:
             type: boolean
@@ -101,19 +101,19 @@ Syclass\Core\Entity\Locale:
             length: 65535
             options:
                 fixed: false
-                default: 'NULL'
+                default: NULL
             column: s_stop_words
         enabled:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_enabled
         enabledBo:
             type: boolean
             nullable: false
             options:
-                default: '1'
+                default: 1
             column: b_enabled_bo
     manyToMany:
         category:

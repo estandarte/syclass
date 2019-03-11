@@ -14,7 +14,7 @@ Syclass\Core\Entity\CityStats:
             nullable: false
             options:
                 unsigned: true
-                default: '0'
+                default: 0
             column: i_num_items
     oneToOne:
         fkICity:
