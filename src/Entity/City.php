@@ -4,80 +4,193 @@ namespace Syclass\Core\Entity;
 
 class City
 {
-    private $pkIId;
+    /**
+     * City ID
+     **/
+    private $id;
 
-    private $sName;
+    /**
+     * City name
+     **/
+    private $name;
 
-    private $sSlug;
+    /**
+     * City slug
+     **/
+    private $slug;
 
-    private $bActive;
+    /**
+     * is this city active?
+     **/
+    private $active = 1;
 
-    private $fkIRegion;
+    /**
+     *
+     * @var Region city region
+     **/
+    private $region;
 
-    private $fkCCountryCode;
+    /**
+     *
+     * @var Country City country
+     **/
+    private $country;
 
-    public function getPkIId(): ?int
+    public function __construct($name, Region $region)
     {
-        return $this->pkIId;
+        $this->name = $name;
+        $this->setRegion($region);
+        $this->setCountry($this->getRegion()->getCountry());
+        $this->setSlug($this->toSlug($name));
     }
 
-    public function getSName(): ?string
+    /**
+     * Get the value of Id
+     *
+     * @return mixed
+     */
+    public function getId()
     {
-        return $this->sName;
+        return $this->id;
     }
 
-    public function setSName(string $sName): self
+    /**
+     * Set the value of Id
+     *
+     * @param mixed id
+     *
+     * @return self
+     */
+    public function setId($id)
     {
-        $this->sName = $sName;
+        $this->id = $id;
 
         return $this;
     }
 
-    public function getSSlug(): ?string
+    /**
+     * Get the value of Name
+     *
+     * @return mixed
+     */
+    public function getName()
     {
-        return $this->sSlug;
+        return $this->name;
     }
 
-    public function setSSlug(string $sSlug): self
+    /**
+     * Set the value of Name
+     *
+     * @param mixed name
+     *
+     * @return self
+     */
+    public function setName($name)
     {
-        $this->sSlug = $sSlug;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getBActive(): ?bool
+    /**
+     * Get the value of Slug
+     *
+     * @return mixed
+     */
+    public function getSlug()
     {
-        return $this->bActive;
+        return $this->slug;
     }
 
-    public function setBActive(bool $bActive): self
+    /**
+     * Set the value of Slug
+     *
+     * @param mixed slug
+     *
+     * @return self
+     */
+    public function setSlug($slug)
     {
-        $this->bActive = $bActive;
+        $this->slug = $slug;
 
         return $this;
     }
 
-    public function getFkIRegion(): ?Region
+    /**
+     * Get the value of Active
+     *
+     * @return mixed
+     */
+    public function getActive()
     {
-        return $this->fkIRegion;
+        return $this->active;
     }
 
-    public function setFkIRegion(?Region $fkIRegion): self
+    /**
+     * Set the value of Active
+     *
+     * @param mixed active
+     *
+     * @return self
+     */
+    public function setActive($active)
     {
-        $this->fkIRegion = $fkIRegion;
+        $this->active = $active;
 
         return $this;
     }
 
-    public function getFkCCountryCode(): ?Country
+    /**
+     * Get the value of Region
+     *
+     * @return mixed
+     */
+    public function getRegion()
     {
-        return $this->fkCCountryCode;
+        return $this->region;
     }
 
-    public function setFkCCountryCode(?Country $fkCCountryCode): self
+    /**
+     * Set the value of Region
+     *
+     * @param mixed region
+     *
+     * @return self
+     */
+    public function setRegion($region)
     {
-        $this->fkCCountryCode = $fkCCountryCode;
+        $this->region = $region;
 
         return $this;
     }
+
+    /**
+     * Get the value of Country
+     *
+     * @return mixed
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set the value of Country
+     *
+     * @param mixed country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    private function toSlug(string $name) : string
+    {
+        return strtolower(preg_replace("/[^a-zA-Z_]/", '',preg_replace("/[ -]+/", "_", $name)));
+    }
+
 }

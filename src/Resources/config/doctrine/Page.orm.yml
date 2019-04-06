@@ -1,8 +1,8 @@
-Syclass\Core\Entity\Pages:
+Syclass\Core\Entity\Page:
     type: entity
     table: pages
     id:
-        pkIId:
+        id:
             type: integer
             nullable: false
             options:
@@ -12,7 +12,7 @@ Syclass\Core\Entity\Pages:
             generator:
                 strategy: IDENTITY
     fields:
-        sInternalName:
+        internalName:
             type: string
             nullable: true
             length: 50
@@ -20,36 +20,36 @@ Syclass\Core\Entity\Pages:
                 fixed: false
                 default: NULL
             column: s_internal_name
-        bIndelible:
+        indelible:
             type: boolean
             nullable: false
             options:
                 default: 0
             column: b_indelible
-        bLink:
+        link:
             type: boolean
             nullable: false
             options:
                 default: 1
             column: b_link
-        dtPubDate:
+        pubDate:
             type: datetime
             nullable: false
             column: dt_pub_date
-        dtModDate:
+        modDate:
             type: datetime
             nullable: true
             options:
                 default: NULL
             column: dt_mod_date
-        iOrder:
+        order:
             type: integer
             nullable: false
             options:
                 unsigned: false
                 default: 0
             column: i_order
-        sMeta:
+        meta:
             type: text
             nullable: true
             length: 65535
@@ -57,22 +57,9 @@ Syclass\Core\Entity\Pages:
                 fixed: false
                 default: NULL
             column: s_meta
-    manyToMany:
-        fkCLocaleCode:
-            targetEntity: Locale
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: fkIPages
-            joinTable:
-                name: pages_description
-                joinColumns:
-                    -
-                        name: fk_i_pages_id
-                        referencedColumnName: pk_i_id
-                inverseJoinColumns:
-                    -
-                        name: fk_c_locale_code
-                        referencedColumnName: pk_c_code
-            orderBy: null
+    oneToMany:
+        description:
+            targetEntity: PageDescription
+            cascade: ['persist']
+            mappedBy: page
     lifecycleCallbacks: {  }

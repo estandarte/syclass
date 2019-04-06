@@ -132,6 +132,11 @@ Syclass\Core\Entity\Item:
             targetEntity: ItemDescription
             mappedBy: item
             cascade: ['persist']
+    oneToOne:
+        location:
+            targetEntity: ItemLocation
+            mappedBy: location
+            cascade: ['persist']
     manyToOne:
         user:
             targetEntity: User

@@ -15,7 +15,7 @@ Syclass\Core\Entity\City:
             columns:
                 - s_name
     id:
-        pkIId:
+        id:
             type: integer
             nullable: false
             options:
@@ -25,14 +25,14 @@ Syclass\Core\Entity\City:
             generator:
                 strategy: IDENTITY
     fields:
-        sName:
+        name:
             type: string
             nullable: false
             length: 60
             options:
                 fixed: false
             column: s_name
-        sSlug:
+        slug:
             type: string
             nullable: false
             length: 60
@@ -40,14 +40,14 @@ Syclass\Core\Entity\City:
                 fixed: false
                 default: ''
             column: s_slug
-        bActive:
+        active:
             type: boolean
             nullable: false
             options:
                 default: 1
             column: b_active
     manyToOne:
-        fkIRegion:
+        region:
             targetEntity: Region
             cascade: {  }
             fetch: LAZY
@@ -57,7 +57,7 @@ Syclass\Core\Entity\City:
                 fk_i_region_id:
                     referencedColumnName: pk_i_id
             orphanRemoval: false
-        fkCCountryCode:
+        country:
             targetEntity: Country
             cascade: {  }
             fetch: LAZY

@@ -5,10 +5,22 @@ namespace Syclass\Core\Entity;
 class Country
 {
     private $code;
-
+    /**
+     * Country name
+     */
     private $name;
 
+    /**
+     * Country slug
+     **/
     private $slug;
+
+    public function __construct($name)
+    {
+        $this->setName($name);
+        $this->setSlug($this->toSlug($name));
+        $this->code = substr($this->getSlug(), 0, 2);
+    }
 
     public function getCode(): ?string
     {
@@ -37,5 +49,9 @@ class Country
         $this->slug = $slug;
 
         return $this;
+    }
+    private function toSlug(string $name) : string
+    {
+        return strtolower(preg_replace("/[^a-zA-Z_]/", '',preg_replace("/[ -]+/", "_", $name)));
     }
 }

@@ -28,7 +28,10 @@ class Item
     private $currency;
 
     private $description;
-
+    /**
+     * ItemLocation
+     **/
+    private $location;
     public function __construct()
     {
         $this->description = new ArrayCollection();
@@ -494,6 +497,45 @@ class Item
             }
         }
 
+        return $this;
+    }
+
+
+    /**
+     * Set the value of Description
+     *
+     * @param mixed description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Location
+     *
+     * @return mixed
+     */
+    public function getLocation() : ?ItemLocation
+    {
+        return $this->location;
+    }
+
+    /**
+     * Set the value of Location
+     *
+     * @param mixed location
+     *
+     * @return self
+     */
+    public function setLocation(ItemLocation $location)
+    {
+        $this->location = $location;
+        $this->location->setItem($this);
         return $this;
     }
 

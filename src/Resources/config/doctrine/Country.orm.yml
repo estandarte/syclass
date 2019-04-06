@@ -18,7 +18,7 @@ Syclass\Core\Entity\Country:
             id: true
             column: pk_c_code
             generator:
-                strategy: IDENTITY
+                strategy: NONE
     fields:
         name:
             type: string

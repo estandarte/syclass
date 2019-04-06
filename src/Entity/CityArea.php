@@ -4,38 +4,98 @@ namespace Syclass\Core\Entity;
 
 class CityArea
 {
-    private $pkIId;
+    /**
+     * city area ID
+     **/
+    private $id;
 
-    private $sName;
+    /**
+     * city area name
+     **/
+    private $name;
 
-    private $fkICity;
+    /**
+     * @var City city of this area
+     **/
+    private $city;
 
-    public function getPkIId(): ?int
+
+    public function __construct($name, City $city)
     {
-        return $this->pkIId;
+        $this->name = $name;
+        $this->setCity($city);
     }
 
-    public function getSName(): ?string
+    /**
+     * Get the value of Id
+     *
+     * @return mixed
+     */
+    public function getId()
     {
-        return $this->sName;
+        return $this->id;
     }
 
-    public function setSName(string $sName): self
+    /**
+     * Set the value of Id
+     *
+     * @param mixed id
+     *
+     * @return self
+     */
+    public function setId($id)
     {
-        $this->sName = $sName;
+        $this->id = $id;
 
         return $this;
     }
 
-    public function getFkICity(): ?City
+    /**
+     * Get the value of Name
+     *
+     * @return mixed
+     */
+    public function getName()
     {
-        return $this->fkICity;
+        return $this->name;
     }
 
-    public function setFkICity(?City $fkICity): self
+    /**
+     * Set the value of Name
+     *
+     * @param mixed name
+     *
+     * @return self
+     */
+    public function setName($name)
     {
-        $this->fkICity = $fkICity;
+        $this->name = $name;
 
         return $this;
     }
+
+    /**
+     * Get the value of City
+     *
+     * @return mixed
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set the value of City
+     *
+     * @param mixed city
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
 }

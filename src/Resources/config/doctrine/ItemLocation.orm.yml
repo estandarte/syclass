@@ -15,20 +15,13 @@ Syclass\Core\Entity\ItemLocation:
             columns:
                 - fk_i_region_id
     id:
-        itemId:
+        item:
+            associationKey: true
             type: integer
-            nullable: false
-            options:
-                unsigned: true
-            id: true
             column: fk_i_item_id
         localeCode:
+            associationKey: true
             type: string
-            nullable: false
-            length: 5
-            options:
-                fixed: true
-            id: true
             column: fk_c_country_code
 
     fields:
@@ -102,7 +95,7 @@ Syclass\Core\Entity\ItemLocation:
             cascade: {  }
             fetch: LAZY
             mappedBy: null
-            inversedBy: null
+            inversedBy: location
             joinColumns:
                 fk_i_item_id:
                     referencedColumnName: pk_i_id
@@ -110,7 +103,7 @@ Syclass\Core\Entity\ItemLocation:
     manyToOne:
         country:
             targetEntity: Country
-            cascade: {  }
+            cascade: ["persist"]
             fetch: LAZY
             mappedBy: null
             inversedBy: null
@@ -120,7 +113,7 @@ Syclass\Core\Entity\ItemLocation:
             orphanRemoval: false
         region:
             targetEntity: Region
-            cascade: {  }
+            cascade: ["persist"]
             fetch: LAZY
             mappedBy: null
             inversedBy: null
@@ -130,7 +123,7 @@ Syclass\Core\Entity\ItemLocation:
             orphanRemoval: false
         city:
             targetEntity: City
-            cascade: {  }
+            cascade: ["persist"]
             fetch: LAZY
             mappedBy: null
             inversedBy: null
@@ -140,7 +133,7 @@ Syclass\Core\Entity\ItemLocation:
             orphanRemoval: false
         cityArea:
             targetEntity: CityArea
-            cascade: {  }
+            cascade: ["persist"]
             fetch: LAZY
             mappedBy: null
             inversedBy: null

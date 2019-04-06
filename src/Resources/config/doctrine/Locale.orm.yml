@@ -124,14 +124,6 @@ Syclass\Core\Entity\Locale:
             inversedBy: null
             joinTable: null
             orderBy: null
-        page:
-            targetEntity: Pages
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: locale
-            inversedBy: null
-            joinTable: null
-            orderBy: null
         user:
             targetEntity: User
             cascade: {  }
@@ -140,4 +132,9 @@ Syclass\Core\Entity\Locale:
             inversedBy: null
             joinTable: null
             orderBy: null
+    oneToMany:
+        page:
+            targetEntity: PageDescription
+            cascade: ['persist']
+            mappedBy: locale
     lifecycleCallbacks: {  }

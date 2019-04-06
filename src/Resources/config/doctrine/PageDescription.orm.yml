@@ -1,0 +1,55 @@
+Syclass\Core\Entity\PageDescription:
+    type: entity
+    table: pages_description
+    indexes:
+    id:
+        pageId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: fk_i_pages_id
+        localeCode:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: true
+            id: true
+            column: fk_c_locale_code
+    fields:
+        title:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_title
+        text:
+            type: text
+            nullable: false
+            length: 16777215
+            options:
+                fixed: false
+            column: s_text
+    manyToOne:
+        page:
+            targetEntity: Page
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: description
+            joinColumns:
+                fk_i_pages_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        locale:
+            targetEntity: Locale
+            cascade: ['persist']
+            fetch: LAZY
+            inversedBy: page
+            joinColumns:
+                fk_c_locale_code:
+                    referencedColumnName: pk_c_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

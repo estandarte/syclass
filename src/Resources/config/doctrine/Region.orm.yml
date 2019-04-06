@@ -12,7 +12,7 @@ Syclass\Core\Entity\Region:
             columns:
                 - s_name
     id:
-        pkIId:
+        id:
             type: integer
             nullable: false
             options:
@@ -22,14 +22,14 @@ Syclass\Core\Entity\Region:
             generator:
                 strategy: IDENTITY
     fields:
-        sName:
+        name:
             type: string
             nullable: false
             length: 60
             options:
                 fixed: false
             column: s_name
-        sSlug:
+        slug:
             type: string
             nullable: false
             length: 60
@@ -37,14 +37,14 @@ Syclass\Core\Entity\Region:
                 fixed: false
                 default: ''
             column: s_slug
-        bActive:
+        active:
             type: boolean
             nullable: false
             options:
                 default: 1
             column: b_active
     manyToOne:
-        fkCCountryCode:
+        country:
             targetEntity: Country
             cascade: {  }
             fetch: LAZY

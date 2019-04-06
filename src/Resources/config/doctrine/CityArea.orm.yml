@@ -9,7 +9,7 @@ Syclass\Core\Entity\CityArea:
             columns:
                 - s_name
     id:
-        pkIId:
+        id:
             type: integer
             nullable: false
             options:
@@ -19,7 +19,7 @@ Syclass\Core\Entity\CityArea:
             generator:
                 strategy: IDENTITY
     fields:
-        sName:
+        name:
             type: string
             nullable: false
             length: 255
@@ -27,7 +27,7 @@ Syclass\Core\Entity\CityArea:
                 fixed: false
             column: s_name
     manyToOne:
-        fkICity:
+        city:
             targetEntity: City
             cascade: {  }
             fetch: LAZY

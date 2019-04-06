@@ -4,33 +4,14 @@ namespace Syclass\Core\Entity;
 
 class ItemLocation
 {
+    private $address;
     private $sCountry;
-
-    private $sAddress;
-
-    private $sZip;
 
     private $sRegion;
 
     private $sCity;
 
     private $sCityArea;
-
-    private $dCoordLat;
-
-    private $dCoordLong;
-
-    private $fkIItem;
-
-    private $fkCCountryCode;
-
-    private $fkIRegion;
-
-    private $fkICity;
-
-    private $fkICityArea;
-
-    private $address;
 
     private $zip;
 
@@ -47,24 +28,7 @@ class ItemLocation
     private $city;
 
     private $cityArea;
-    private $itemId;
     private $localeCode;
-    public function getItemId(): ?int
-    {
-        return $this->itemId;
-    }
-    public function setItemId($itemId)
-    {
-        $this->itemId = $itemId;
-    }
-    public function getLocaleCode(): ?int
-    {
-        return $this->LocaleCode;
-    }
-    public function setLocaleCode($localeCode)
-    {
-        $this->localeCode = $localeCode;
-    }
 
     public function getSCountry(): ?string
     {
@@ -78,26 +42,26 @@ class ItemLocation
         return $this;
     }
 
-    public function getSAddress(): ?string
+    public function getAddress(): ?string
     {
-        return $this->sAddress;
+        return $this->address;
     }
 
-    public function setSAddress(?string $sAddress): self
+    public function setAddress(?string $address): self
     {
-        $this->sAddress = $sAddress;
+        $this->address = $address;
 
         return $this;
     }
 
-    public function getSZip(): ?string
+    public function getZip(): ?string
     {
-        return $this->sZip;
+        return $this->Zip;
     }
 
-    public function setSZip(?string $sZip): self
+    public function setZip(?string $zip): self
     {
-        $this->sZip = $sZip;
+        $this->zip = $zip;
 
         return $this;
     }
@@ -158,90 +122,6 @@ class ItemLocation
     public function setDCoordLong($dCoordLong): self
     {
         $this->dCoordLong = $dCoordLong;
-
-        return $this;
-    }
-
-    public function getFkIItem(): ?Item
-    {
-        return $this->fkIItem;
-    }
-
-    public function setFkIItem(?Item $fkIItem): self
-    {
-        $this->fkIItem = $fkIItem;
-
-        return $this;
-    }
-
-    public function getFkCCountryCode(): ?Country
-    {
-        return $this->fkCCountryCode;
-    }
-
-    public function setFkCCountryCode(?Country $fkCCountryCode): self
-    {
-        $this->fkCCountryCode = $fkCCountryCode;
-
-        return $this;
-    }
-
-    public function getFkIRegion(): ?Region
-    {
-        return $this->fkIRegion;
-    }
-
-    public function setFkIRegion(?Region $fkIRegion): self
-    {
-        $this->fkIRegion = $fkIRegion;
-
-        return $this;
-    }
-
-    public function getFkICity(): ?City
-    {
-        return $this->fkICity;
-    }
-
-    public function setFkICity(?City $fkICity): self
-    {
-        $this->fkICity = $fkICity;
-
-        return $this;
-    }
-
-    public function getFkICityArea(): ?CityArea
-    {
-        return $this->fkICityArea;
-    }
-
-    public function setFkICityArea(?CityArea $fkICityArea): self
-    {
-        $this->fkICityArea = $fkICityArea;
-
-        return $this;
-    }
-
-    public function getAddress(): ?string
-    {
-        return $this->address;
-    }
-
-    public function setAddress(?string $address): self
-    {
-        $this->address = $address;
-
-        return $this;
-    }
-
-    public function getZip(): ?string
-    {
-        return $this->zip;
-    }
-
-    public function setZip(?string $zip): self
-    {
-        $this->zip = $zip;
 
         return $this;
     }
