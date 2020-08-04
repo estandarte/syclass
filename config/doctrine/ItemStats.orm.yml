@@ -1,0 +1,81 @@
+Syclass\Entity\ItemStats:
+    type: entity
+    table: item_stats
+    indexes:
+        dt_date_fk_i_item_id:
+            columns:
+                - dt_date
+                - fk_i_item_id
+        IDX_4D434A4A7495988B:
+            columns:
+                - fk_i_item_id
+    id:
+        dtDate:
+            type: date
+            nullable: false
+            id: true
+            column: dt_date
+        fkIItem:
+            associationKey: true
+    fields:
+        iNumViews:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_views
+        iNumSpam:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_spam
+        iNumRepeated:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_repeated
+        iNumBadClassified:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_bad_classified
+        iNumOffensive:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_offensive
+        iNumExpired:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_expired
+        iNumPremiumViews:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_premium_views
+    oneToOne:
+        fkIItem:
+            targetEntity: Item
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_item_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

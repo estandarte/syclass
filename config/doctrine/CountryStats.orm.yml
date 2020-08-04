@@ -1,0 +1,30 @@
+Syclass\Entity\CountryStats:
+    type: entity
+    table: country_stats
+    indexes:
+        idx_num_items:
+            columns:
+                - i_num_items
+    id:
+        fkCCountryCode:
+            associationKey: true
+    fields:
+        iNumItems:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_items
+    oneToOne:
+        fkCCountryCode:
+            targetEntity: Country
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_c_country_code:
+                    referencedColumnName: pk_c_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

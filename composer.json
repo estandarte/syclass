@@ -1,18 +1,14 @@
 {
-    "name": "syclass/core",
-    "type": "library",
-    "description": "Classified based on Symfony PHP framework",
-    "keywords": ["classified"],
-    "homepage": "https://github.com/estandarte/syclass",
+    "name": "symfony/website-skeleton",
+    "type": "project",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Leandro Chaves",
-            "email": "leandrorchaves@gmail.com"
-        }
-    ],
+    "description": "A skeleton to start a new Symfony website",
     "require": {
         "php": "^7.1.3",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "fabpot/goutte": "^3.2",
+        "liip/imagine-bundle": "^2.1",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "*",
         "symfony/console": "*",
@@ -31,12 +27,71 @@
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
         "symfony/web-link": "*",
-        "symfony/yaml": "*"
+        "symfony/yaml": "*",
+        "estandarte/syclass-monitor-bundle": "*"
+    },
+    "repositories": [{
+        "type": "package",
+        "package": {
+            "name": "estandarte/syclass-monitor-bundle",
+            "version": "dev-master",
+            "source": {
+                "url": "git@bitbucket.org:estandarte/syclass-monitor-bundle.git",
+                "type": "git",
+                "reference": "master"
+            }
+        }
+    }],
+    "require-dev": {
+        "symfony/debug-pack": "*",
+        "symfony/maker-bundle": "^1.0",
+        "symfony/profiler-pack": "*",
+        "symfony/test-pack": "*",
+        "symfony/web-server-bundle": "*"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
-            "Syclass\\Core\\": "src/"
+            "Syclass\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "autoload-dev": {
+        "psr-4": {
+            "Syclass\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "paragonie/random_compat": "2.*",
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php56": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "4.2.*"
+        }
+    }
 }

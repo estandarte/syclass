@@ -1,0 +1,39 @@
+Syclass\Entity\BanRule:
+    type: entity
+    table: ban_rule
+    id:
+        pkIId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sName:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+                default: ''''''
+            column: s_name
+        sIp:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+                default: ''''''
+            column: s_ip
+        sEmail:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+                default: ''''''
+            column: s_email
+    lifecycleCallbacks: {  }

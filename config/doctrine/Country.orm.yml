@@ -1,0 +1,38 @@
+Syclass\Entity\Country:
+    type: entity
+    table: country
+    indexes:
+        idx_s_slug:
+            columns:
+                - s_slug
+        idx_s_name:
+            columns:
+                - s_name
+    id:
+        code:
+            type: string
+            nullable: false
+            length: 2
+            options:
+                fixed: true
+            id: true
+            column: pk_c_code
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 80
+            options:
+                fixed: false
+            column: s_name
+        slug:
+            type: string
+            nullable: false
+            length: 80
+            options:
+                fixed: false
+                default: ''''''
+            column: s_slug
+    lifecycleCallbacks: {  }

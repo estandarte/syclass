@@ -1,0 +1,30 @@
+Syclass\Entity\CityStats:
+    type: entity
+    table: city_stats
+    indexes:
+        idx_num_items:
+            columns:
+                - i_num_items
+    id:
+        fkICity:
+            associationKey: true
+    fields:
+        iNumItems:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_items
+    oneToOne:
+        fkICity:
+            targetEntity: City
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_city_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

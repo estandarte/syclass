@@ -1,0 +1,72 @@
+Syclass\Entity\Alerts:
+    type: entity
+    table: alerts
+    id:
+        pkIId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sEmail:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_email
+        fkIUserId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+                default: 'NULL'
+            column: fk_i_user_id
+        sSearch:
+            type: text
+            nullable: true
+            length: 0
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_search
+        sSecret:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_secret
+        bActive:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+            column: b_active
+        eType:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: e_type
+        dtDate:
+            type: datetime
+            nullable: true
+            options:
+                default: 'NULL'
+            column: dt_date
+        dtUnsubDate:
+            type: datetime
+            nullable: true
+            options:
+                default: 'NULL'
+            column: dt_unsub_date
+    lifecycleCallbacks: {  }

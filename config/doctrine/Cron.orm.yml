@@ -1,0 +1,30 @@
+Syclass\Entity\Cron:
+    type: entity
+    table: cron
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        eType:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: e_type
+        dLastExec:
+            type: datetime
+            nullable: false
+            column: d_last_exec
+        dNextExec:
+            type: datetime
+            nullable: false
+            column: d_next_exec
+    lifecycleCallbacks: {  }

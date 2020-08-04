@@ -1,0 +1,30 @@
+Syclass\Entity\RegionStats:
+    type: entity
+    table: region_stats
+    indexes:
+        idx_num_items:
+            columns:
+                - i_num_items
+    id:
+        fkIRegion:
+            associationKey: true
+    fields:
+        iNumItems:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_items
+    oneToOne:
+        fkIRegion:
+            targetEntity: Region
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_region_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

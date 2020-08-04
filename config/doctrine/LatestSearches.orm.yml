@@ -1,0 +1,25 @@
+Syclass\Entity\LatestSearches:
+    type: entity
+    table: latest_searches
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        dDate:
+            type: datetime
+            nullable: false
+            column: d_date
+        sSearch:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: s_search
+    lifecycleCallbacks: {  }

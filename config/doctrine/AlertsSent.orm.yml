@@ -1,0 +1,20 @@
+Syclass\Entity\AlertsSent:
+    type: entity
+    table: alerts_sent
+    id:
+        dDate:
+            type: date
+            nullable: false
+            id: true
+            column: d_date
+            generator:
+                strategy: IDENTITY
+    fields:
+        iNumAlertsSent:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_alerts_sent
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+Syclass\Entity\UserEmailTmp:
+    type: entity
+    table: user_email_tmp
+    id:
+        fkIUser:
+            associationKey: true
+    fields:
+        sNewEmail:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_new_email
+        dtDate:
+            type: datetime
+            nullable: false
+            column: dt_date
+    oneToOne:
+        fkIUser:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_user_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

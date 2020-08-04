@@ -1,0 +1,143 @@
+Syclass\Entity\Locale:
+    type: entity
+    table: locale
+    uniqueConstraints:
+        s_short_name:
+            columns:
+                - s_short_name
+    id:
+        code:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: true
+            id: true
+            column: pk_c_code
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_name
+        shortName:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+            column: s_short_name
+        description:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_description
+        version:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: s_version
+        authorName:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_author_name
+        authorUrl:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: s_author_url
+        currencyFormat:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: s_currency_format
+        decPoint:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+                default: '''.'''
+            column: s_dec_point
+        thousandsSep:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+                default: ''''''
+            column: s_thousands_sep
+        numDec:
+            type: boolean
+            nullable: true
+            options:
+                default: '2'
+            column: i_num_dec
+        dateFormat:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: s_date_format
+        stopWords:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_stop_words
+        enabled:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_enabled
+        enabledBo:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_enabled_bo
+    manyToMany:
+        category:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: locale
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+        page:
+            targetEntity: Pages
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: locale
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+        user:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: locale
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

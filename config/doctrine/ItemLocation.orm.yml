@@ -1,0 +1,137 @@
+Syclass\Entity\ItemLocation:
+    type: entity
+    table: item_location
+    indexes:
+        fk_c_country_code:
+            columns:
+                - fk_c_country_code
+        fk_i_city_area_id:
+            columns:
+                - fk_i_city_area_id
+        fk_i_city_id:
+            columns:
+                - fk_i_city_id
+        fk_i_region_id:
+            columns:
+                - fk_i_region_id
+    id:
+        id:
+            associationKey: true
+    fields:
+        sCountry:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_country
+        address:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_address
+        zip:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_zip
+        sRegion:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_region
+        sCity:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_city
+        sCityArea:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_city_area
+        coordLat:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 6
+            options:
+                default: 'NULL'
+            column: d_coord_lat
+        coordLong:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 6
+            options:
+                default: 'NULL'
+            column: d_coord_long
+    oneToOne:
+        item:
+            targetEntity: Item
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_item_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    manyToOne:
+        country:
+            targetEntity: Country
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_c_country_code:
+                    referencedColumnName: pk_c_code
+            orphanRemoval: false
+        region:
+            targetEntity: Region
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_region_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        city:
+            targetEntity: City
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_city_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        cityArea:
+            targetEntity: CityArea
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_city_area_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

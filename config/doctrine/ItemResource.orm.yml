@@ -1,0 +1,66 @@
+Syclass\Entity\ItemResource:
+    type: entity
+    table: item_resource
+    indexes:
+        fk_i_item_id:
+            columns:
+                - fk_i_item_id
+        idx_s_content_type:
+            columns:
+                - pk_i_id
+                - s_content_type
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_name
+        extension:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_extension
+        contentType:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_content_type
+        path:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_path
+    manyToOne:
+        item:
+            targetEntity: Item
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_item_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

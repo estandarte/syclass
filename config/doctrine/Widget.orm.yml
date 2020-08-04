@@ -1,0 +1,44 @@
+Syclass\Entity\Widget:
+    type: entity
+    table: widget
+    id:
+        pkIId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sDescription:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+            column: s_description
+        sLocation:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+            column: s_location
+        eType:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                default: 'NULL'
+            column: e_type
+        sContent:
+            type: text
+            nullable: false
+            length: 16777215
+            options:
+                fixed: false
+            column: s_content
+    lifecycleCallbacks: {  }

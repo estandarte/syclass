@@ -1,0 +1,70 @@
+Syclass\Entity\City:
+    type: entity
+    table: city
+    indexes:
+        fk_i_region_id:
+            columns:
+                - fk_i_region_id
+        fk_c_country_code:
+            columns:
+                - fk_c_country_code
+        idx_s_slug:
+            columns:
+                - s_slug
+        idx_s_name:
+            columns:
+                - s_name
+    id:
+        pkIId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: pk_i_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sName:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+            column: s_name
+        sSlug:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+                default: ''''''
+            column: s_slug
+        bActive:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_active
+    manyToOne:
+        fkIRegion:
+            targetEntity: Region
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_region_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+        fkCCountryCode:
+            targetEntity: Country
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_c_country_code:
+                    referencedColumnName: pk_c_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

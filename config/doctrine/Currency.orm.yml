@@ -1,0 +1,41 @@
+Syclass\Entity\Currency:
+    type: entity
+    table: currency
+    uniqueConstraints:
+        s_name:
+            columns:
+                - s_name
+    id:
+        code:
+            type: string
+            nullable: false
+            length: 3
+            options:
+                fixed: true
+            id: true
+            column: pk_c_code
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+            column: s_name
+        description:
+            type: string
+            nullable: true
+            length: 80
+            options:
+                fixed: false
+                default: 'NULL'
+            column: s_description
+        enabled:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+            column: b_enabled
+    lifecycleCallbacks: {  }

@@ -1,0 +1,26 @@
+Syclass\Entity\CategoryStats:
+    type: entity
+    table: category_stats
+    id:
+        fkICategory:
+            associationKey: true
+    fields:
+        iNumItems:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+                default: '0'
+            column: i_num_items
+    oneToOne:
+        fkICategory:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fk_i_category_id:
+                    referencedColumnName: pk_i_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
