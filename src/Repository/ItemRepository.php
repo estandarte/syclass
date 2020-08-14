@@ -4,7 +4,7 @@ namespace Syclass\Core\Repository;
 
 use Syclass\Entity\Item;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
  * @method Item|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,7 +14,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class ItemRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Item::class);
     }
